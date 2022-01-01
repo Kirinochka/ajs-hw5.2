@@ -22,44 +22,20 @@ class Character {
   }
 
   set type(value) {
-    if (value === 'Bowerman') {
-      this.$attack = 25;
-      this.$defence = 25;
-    } else if (value === 'Swordsman') {
-      this.$attack = 40;
-      this.$defence = 10;
-    } else if (value === 'Magician') {
-      this.$attack = 10;
-      this.$defence = 40;
-    } else if (value === 'Daemon') {
-      this.$attack = 10;
-      this.$defence = 40;
-    } else if (value === 'Undead') {
-      this.$attack = 25;
-      this.$defence = 25;
-    } else if (value === 'Zombie') {
-      this.$attack = 40;
-      this.$defence = 10;
+    if (
+      value === 'Bowerman'
+      || value === 'Swordsman'
+      || value === 'Magician'
+      || value === 'Daemon'
+      || value === 'Undead'
+      || value === 'Zombie'
+    ) {
+      this.$type = value;
     } else {
-      throw new Error('тип может быть только Bowman, Swordsman, Magician, Daemon, Undead, Zombie');
+      throw new Error(
+        'тип может быть только Bowman, Swordsman, Magician, Daemon, Undead, Zombie',
+      );
     }
-    this.$type = value;
-  }
-
-  set attack(value) {
-    this.$attack = value;
-  }
-
-  set defence(value) {
-    this.$defence = value;
-  }
-
-  get attack() {
-    return this.$attack;
-  }
-
-  get defence() {
-    return this.$defence;
   }
 
   levelUp() {

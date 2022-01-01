@@ -19,7 +19,7 @@ test('should throw name Character', () => {
 });
 
 test('level up character', () => {
-  const char = new Character('name', 'Swordsman');
+  const char = new Swordsman('name');
   char.health = 20;
   char.levelUp();
   expect(char.attack).toBe(48);
@@ -33,13 +33,13 @@ test('level up character', () => {
 });
 
 test('damage character', () => {
-  const char = new Character('name', 'Swordsman');
+  const char = new Swordsman('name');
   char.damage(25);
   expect(char.health).toBe(77.5);
 });
 
 test('damage character', () => {
-  const char = new Character('name', 'Swordsman');
+  const char = new Swordsman('name');
   char.health = -2;
   char.damage(25);
   expect(char.health).toBe(-2);
